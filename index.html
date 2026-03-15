@@ -14,7 +14,11 @@
 
 <div class="app">
 
+<div class="top-bar">
 <h1>Minha Lista de Tarefas</h1>
+
+<button id="themeToggle">🌙</button>
+</div>
 
 <div class="input-group">
 
@@ -26,9 +30,19 @@
 <option value="baixa">Baixa</option>
 </select>
 
+<input type="date" id="dueDate">
+
 <button class="add-btn" onclick="addTask()">
 Adicionar
 </button>
+
+</div>
+
+<div class="filters">
+
+<button onclick="setFilter('all')">Todas</button>
+<button onclick="setFilter('pending')">Pendentes</button>
+<button onclick="setFilter('completed')">Concluídas</button>
 
 </div>
 

@@ -14,7 +14,8 @@ tasks.forEach((task,index)=>{
 
 const li = document.createElement("li");
 
-li.classList.add(`priority-${task.priority}`);
+const priority = task.priority || "media";
+li.classList.add(`priority-${priority}`);
 
 if(task.completed){
 li.classList.add("completed");

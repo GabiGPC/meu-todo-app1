@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Todo List</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="app">
+
 <h1>Minha Lista de Tarefas</h1>
 
 <div class="input-group">
+
 <input id="taskInput" placeholder="Digite uma tarefa...">
 
 <select id="priority">
-<option value="low">Baixa</option>
-<option value="medium">Média</option>
-<option value="high">Alta</option>
+<option value="alta">Alta</option>
+<option value="media">Média</option>
+<option value="baixa">Baixa</option>
 </select>
 
-<button class="add-btn" onclick="addTask()">Adicionar</button>
+<button class="add-btn" onclick="addTask()">
+Adicionar
+</button>
+
 </div>
 
 <ul id="taskList"></ul>

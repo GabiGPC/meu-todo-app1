@@ -49,6 +49,27 @@ renderTasks();
 function deleteTask(index){
 tasks.splice(index,1);
 saveTasks();
+
+function addTask(){
+
+const input = document.getElementById('taskInput');
+const priority = document.getElementById('priority').value;
+
+const text = input.value.trim();
+
+if(text === '') return;
+
+tasks.push({
+text: text,
+priority: priority,
+completed:false
+});
+
+input.value = '';
+
+saveTasks();
+renderTasks();
+}
 renderTasks();
 }
 

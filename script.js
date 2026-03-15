@@ -5,6 +5,14 @@ function saveTasks(){
 localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function formatDate(dateString){
+
+const [year, month, day] = dateString.split("-")
+
+return `${day}/${month}/${year}`
+
+}
+
 function renderTasks(){
 
 const list = document.getElementById("taskList");
@@ -35,7 +43,7 @@ li.innerHTML=`
 
 <span>${task.text}</span>
 
-${task.dueDate ? `<span class="date">Prazo: ${task.dueDate}</span>`:""}
+${task.dueDate ? `<span class="date">Prazo: ${formatDate(task.dueDate)}</span>`:""}
 
 </div>
 

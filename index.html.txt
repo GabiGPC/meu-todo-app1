@@ -1,0 +1,26 @@
+!DOCTYPE html
+html lang=pt-BR
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleTodo Listtitle
+
+link rel=stylesheet href=style.css
+head
+
+body
+
+div class=app
+  h1Minha Lista de Tarefash1
+
+  div class=input-group
+    input id=taskInput placeholder=Digite uma tarefa... 
+    button class=add-btn onclick=addTask()Adicionarbutton
+  div
+
+  ul id=taskListul
+div
+
+script src=script.jsscript
+body
+html

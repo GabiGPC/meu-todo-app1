@@ -95,3 +95,22 @@ font-size:12px;
 .app{padding:18px}
 h1{font-size:20px}
 }
+
+.priority-alta{
+border-left:6px solid #ff4d4d;
+}
+
+.priority-media{
+border-left:6px solid #ffc107;
+}
+
+.priority-baixa{
+border-left:6px solid #28a745;
+}
+
+select{
+padding:12px;
+border-radius:10px;
+border:1px solid #e3e6ef;
+font-size:14px;
+}

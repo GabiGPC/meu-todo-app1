@@ -1,38 +1,34 @@
-!DOCTYPE html
-html lang=pt-BR
-head
-meta charset=UTF-8
-meta name=viewport content=width=device-width, initial-scale=1.0
-titleTodo Listtitle
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-link rel=stylesheet href=style.css
-head
+<body>
 
-body
-
-div class=app
-  h1Minha Lista de Tarefash1
-
-  div class=input-group
-    input id=taskInput placeholder=Digite uma tarefa... 
-    button class=add-btn onclick=addTask()Adicionarbutton
-  div
-
-  ul id=taskListul
-div
-
-script src=script.jsscript
-body
-html
+<div class="app">
+<h1>Minha Lista de Tarefas</h1>
 
 <div class="input-group">
-  <input id="taskInput" placeholder="Digite uma tarefa..." />
+<input id="taskInput" placeholder="Digite uma tarefa...">
 
-  <select id="priority">
-    <option value="alta">Alta</option>
-    <option value="media">Média</option>
-    <option value="baixa">Baixa</option>
-  </select>
+<select id="priority">
+<option value="low">Baixa</option>
+<option value="medium">Média</option>
+<option value="high">Alta</option>
+</select>
 
-  <button class="add-btn" onclick="addTask()">Adicionar</button>
+<button class="add-btn" onclick="addTask()">Adicionar</button>
 </div>
+
+<ul id="taskList"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

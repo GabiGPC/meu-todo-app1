@@ -150,3 +150,8 @@ border-left:6px solid #28a745;
 font-size:12px;
 opacity:0.7;
 }
+
+/* opcional: melhorar visual do select */
+#parentTask{
+min-width:160px;
+}

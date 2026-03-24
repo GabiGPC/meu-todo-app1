@@ -1,6 +1,5 @@
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let filter = "all";
-let currentParentId = null;
 
 
 // =====================
@@ -17,6 +16,22 @@ localStorage.setItem("tasks", JSON.stringify(tasks));
 function formatDate(dateString){
 const [year, month, day] = dateString.split("-")
 return `${day}/${month}/${year}`
+}
+
+
+// =====================
+// ATUALIZAR SELECT DE PAI
+// =====================
+function updateParentOptions(){
+
+const select = document.getElementById("parentTask");
+
+select.innerHTML = `<option value="">Sem vínculo</option>`;
+
+tasks.forEach(task=>{
+select.innerHTML += `<option value="${task.id}">${task.text}</option>`;
+});
+
 }
 
 
@@ -59,17 +74,13 @@ li.innerHTML=`
 
 <span>${task.text}</span>
 
-${task.parentId ? `<small class="subtask">↳</small>` : ""}
+${task.parentId ? `<small>↳</small>` : ""}
 
 ${task.dueDate ? `<span class="date">Prazo: ${formatDate(task.dueDate)}</span>`:""}
 
 </div>
 
 <div>
-
-<button onclick="setParentTask(${task.id})">
-Subtarefa
-</button>
 
 <input type="checkbox"
 ${task.completed ? "checked":""}
@@ -82,11 +93,13 @@ Excluir
 
 </div>
 
-`
+`;
 
-list.appendChild(li)
+list.appendChild(li);
 
-})
+});
+
+updateParentOptions(); // 🔥 importante
 
 }
 
@@ -99,6 +112,7 @@ function addTask(){
 const input=document.getElementById("taskInput")
 const priority=document.getElementById("priority").value
 const dueDate=document.getElementById("dueDate").value
+const parentId=document.getElementById("parentTask").value
 
 const text=input.value.trim()
 
@@ -110,13 +124,12 @@ text:text,
 priority:priority,
 dueDate:dueDate,
 completed:false,
-parentId: currentParentId
-})
-
-currentParentId = null;
+parentId: parentId || null
+});
 
 input.value=""
 document.getElementById("dueDate").value=""
+document.getElementById("parentTask").value=""
 
 saveTasks()
 renderTasks()
@@ -150,15 +163,6 @@ renderTasks();
 function setFilter(type){
 filter=type
 renderTasks()
-}
-
-
-// =====================
-// SET PARENT
-// =====================
-function setParentTask(taskId){
-currentParentId = taskId;
-alert("Nova tarefa será vinculada a esta");
 }
 
 
